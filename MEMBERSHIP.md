@@ -28,7 +28,7 @@ This primitive is a member of the Document Editor primitive family. It defines r
 1. **Coordinate-system changes are HIGH-RIPPLE** — couples with PaginationPrimitive via DocumentPrimitive. Breaking coordinate semantics requires coordinated change across the pair.
 2. Changes to ruler units (points/inches/mm): affects inspector UI + tab-stop rendering in every consumer.
 3. Tab-stop model changes: affects RichTextEditorKit's editing surface.
-4. Consult [dependency audit §5](../docs/plans/2026-04-19-document-editor-dependency-audit.md).
+4. Consult [dependency audit §5](../RichTextEditorKit/docs/plans/2026-04-19-document-editor-dependency-audit.md).
 5. Document ripple impact in the commit/PR.
 
 ## Scope of Membership
