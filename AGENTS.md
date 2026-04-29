@@ -24,6 +24,10 @@ RulerPrimitive models measurement units, ruler markers, tab stops, and ruler sta
 - Keep marker mutation observable through `RulerState` rather than scattering ruler arrays across callers.
 - Preserve Codable model stability for saved editor preferences.
 
+## UI Posture
+
+N/A — no UI surface. RulerPrimitive owns measurement state and conversion logic; rendering belongs in consumer packages. Reviewed 2026-04-29 (Theme & HIG audit round 1).
+
 ## Testing
 - Run `swift test` before committing.
 - Add state mutation coverage to `RulerStateTests`.
