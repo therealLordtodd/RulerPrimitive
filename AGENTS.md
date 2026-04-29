@@ -1,5 +1,16 @@
 # RulerPrimitive Working Guide
 
+## Repositories & Local Paths
+
+| Package | Repository | Local Path |
+|---------|------------|------------|
+| **RulerPrimitive** | https://github.com/therealLordtodd/RulerPrimitive.git | `/Users/todd/Building - Apple/Packages/RulerPrimitive` |
+
+## Build & Test
+
+- Build: `swift build`
+- Test: `swift test`
+
 ## Purpose
 RulerPrimitive models measurement units, ruler markers, tab stops, and ruler state for document editing UI. It deliberately owns state and conversion logic, not rendering.
 
