@@ -28,6 +28,12 @@ RulerPrimitive models measurement units, ruler markers, tab stops, and ruler sta
 
 N/A — no UI surface. RulerPrimitive owns measurement state and conversion logic; rendering belongs in consumer packages. Reviewed 2026-04-29 (Theme & HIG audit round 1).
 
+## Security Posture
+
+`RulerPrimitive` is a Cat 1 in-memory document-layout model package. It owns no credentials, network calls, filesystem access, database access, durable persistence, pasteboard access, logging facade, renderer, platform ruler control, or AISeams surface.
+
+Its values can still carry document-layout semantics: margin positions, tab stops, marker identifiers, active selections, ruler configuration, unit choices, origins, lengths, and observable mutation state. Hosts own document authorization, persistence/restore, sync/conflict policy, audit logging, redaction, UI gesture policy, layout application, and any AI workflow that proposes or mutates ruler state.
+
 ## Testing
 - Run `swift test` before committing.
 - Add state mutation coverage to `RulerStateTests`.
@@ -48,6 +54,6 @@ This primitive is a member of the Document Editor primitive family. It participa
 
 Standalone consumers (apps just importing this primitive) are unaffected by this discipline — it applies only to modifications to the primitive itself.
 
-## Performance posture
+## Performance Posture
 
-No performance-critical hot paths — geometry and layout values, no runtime surface. Reviewed 2026-04-29 (round 1).
+Hot paths are unit conversion, marker lookup/mutation, tab-stop sorting, and observable state updates while a ruler UI drags markers. Keep the model simple and avoid moving rendering or document-layout recomputation into this package. Reviewed 2026-05-02 (Security follow-up correction).

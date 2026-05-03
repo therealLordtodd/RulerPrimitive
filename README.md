@@ -135,5 +135,5 @@ Practical guidance:
 
 ## Platform Support
 
-- macOS 15+
+- macOS 14+
 - iOS 17+
